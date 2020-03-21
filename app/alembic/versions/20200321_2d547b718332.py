@@ -28,8 +28,8 @@ def upgrade():
     sa.Column('covid_status', sa.Text(), nullable=True),
     sa.PrimaryKeyConstraint('id', name=op.f('pk_persons'))
     )
-    op.drop_index('my_index', table_name='models')
-    op.drop_table('models')
+  #  op.drop_index('my_index', table_name='models')
+   # op.drop_table('models')
     # ### end Alembic commands ###
 
 def downgrade():
@@ -40,6 +40,6 @@ def downgrade():
     sa.Column('value', sa.INTEGER(), nullable=True),
     sa.PrimaryKeyConstraint('id', name='pk_models')
     )
-    op.create_index('my_index', 'models', ['name'], unique=1)
+   # op.create_index('my_index', 'models', ['name'], unique=1)
     op.drop_table('persons')
     # ### end Alembic commands ###
