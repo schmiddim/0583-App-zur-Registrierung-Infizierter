@@ -9,11 +9,12 @@ from .. import models
 @view_config(route_name='home', renderer='../templates/home.jinja2')
 def my_view(request):
     try:
-        query = request.dbsession.query(models.MyModel)
-        one = query.filter(models.MyModel.name == 'one').first()
+        pass
+  #     query = request.dbsession.query(models.MyModel)
+  #     one = query.filter(models.MyModel.name == 'one').first()
     except DBAPIError:
         return Response(db_err_msg, content_type='text/plain', status=500)
-    return {'one': one, 'project': 'app'}
+    return {'one': 9, 'project': 'app'}
 
 
 db_err_msg = """\

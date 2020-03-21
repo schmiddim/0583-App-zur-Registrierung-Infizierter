@@ -3,7 +3,7 @@ import logging
 log = logging.getLogger(__name__)
 
 
-@view_config(route_name='person_info', renderer='../templates/submit_person_info/main.jinja2')
+@view_config(route_name='person_create', renderer='../templates/submit_person_info/main.jinja2')
 def person_info(request):
     firstname_has_error = False
     lastname_has_error = False
