@@ -24,6 +24,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         script: |
-          whoami
-          pwd
-          cat /etc/hostname
+          cd /opt/dirty/0583-App-zur-Registrierung-Infizierter
+          git pull
