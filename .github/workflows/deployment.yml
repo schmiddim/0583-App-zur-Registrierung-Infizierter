@@ -29,3 +29,4 @@ jobs:
           env/bin/pip install --upgrade pip setuptools
           env/bin/pip install -e .
           env/bin/alembic -c production.ini upgrade head
+          env/bin/supervisorctl  restart all
