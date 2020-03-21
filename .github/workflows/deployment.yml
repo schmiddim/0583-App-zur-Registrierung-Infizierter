@@ -26,6 +26,12 @@ jobs:
         script: |
           cd /opt/dirty/0583-App-zur-Registrierung-Infizierter
           git pull
+          python3 -m venv env
+          env/bin/pip install --upgrade pip setuptools
+          env/bin/pip install -e .
+
+
+
       #    cd /opt/dirty/0583-App-zur-Registrierung-Infizierter/app
       #    virtualenv   -p python3 venv    #if python2 is the default interpreter
       #    source venv/bin/activate
