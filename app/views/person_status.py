@@ -1,24 +1,42 @@
 from pyramid.view import view_config
 
 
-@view_config(route_name='person_status', renderer='../templates/mytemplate.jinja2')
+@view_config(route_name='person_status', renderer='../templates/status/main.jinja2')
 def person_view(request):
+    email_has_error = False
+    case_number_has_error = False
+    case_number = ""
+    email = ""
+
     if request.method == 'POST':
-        db_err_msg= request
-    return {'one': 'ONE', 'project': 'app'}
+        email = request.POST['email'].strip()
+        case_number = request.POST['case_number'].strip()
+        email_has_error = False if email != '' else True
+        case_number_has_error = False if case_number != '' else True
 
+        #@todo case number not found
+        case_number_found = True
 
-db_err_msg = """\
-Pyramid is having a problem using your SQL database.  The problem
-might be caused by one of the following things:
+        if case_number_has_error == False and email_has_error == False:
+            # @todo fetch Data about Case Number form DB!
 
-1.  You may need to initialize your database tables with `alembic`.
-    Check your README.txt for descriptions and try to run it.
+            return {
+                'successfully_submitted': True,
+                'case_number_has_error': case_number_has_error,
+                'email_has_error': email_has_error,
+                'case_number': case_number,
+                'case_number_found': case_number_found,
 
-2.  Your database server may not be running.  Check that the
-    database server referred to by the "sqlalchemy.url" setting in
-    your "development.ini" file is running.
+                'email': email,
 
-After you fix the problem, please restart the Pyramid application to
-try it again.
-"""
+            }
+
+    return {
+        'successfully_submitted': False,
+        'case_number_has_error': case_number_has_error,
+        'email_has_error': email_has_error,
+        'case_number': case_number,
+        'case_number_found': case_number_found,
+        'email': email,
+
+    }

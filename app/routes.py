@@ -2,4 +2,4 @@ def includeme(config):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
     config.add_route('person_info', '/person_info')
-    config.add_route('person_status', '/person_status')
+    config.add_route('person_status', '/status')

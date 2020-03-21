@@ -1,0 +1,52 @@
+{% extends "../layout.jinja2" %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h1>Bitte geben Sie Ihre Fallnummer und Email ein</h1>
+        </div>
+    </div>
+
+    {%if False == case_number_found%}
+        <div class="row">
+            <div class="col-md-12">
+            <h2>
+                Ihre Fallnummer {{case_number}} wurde leider nicht gefunden
+            </h2>
+            </div>
+        </div>
+    {%endif%}
+    <div class="row">
+        <div class="col-md-12">
+
+            <form method="POST">
+                <div class="form-group">
+                    <label for="case_number">Fallnummer</label>
+                    <input type="text" class="form-control" id="case_number" name="case_number" placeholder="Fallnummer" value="{{case_number}}">
+                    {%if case_number_has_error %}
+                    <div class="invalid-feedback">
+                        Bitte Fallnummer angeben
+                    </div>
+                    {%endif%}
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{email}}">
+
+                    {%if email_has_error %}
+                    <div class="invalid-feedback">
+                        Bitte Email Adresse angeben
+                    </div>
+                    {%endif%}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Absenden</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
