@@ -1,6 +1,5 @@
 from pyramid.view import view_config
 import logging
-
 log = logging.getLogger(__name__)
 
 
@@ -28,9 +27,14 @@ def person_info(request):
 
         if firstname_has_error == False and lastname_has_error == False and phonenumber_has_error == False and email_has_error == False:
             #@todo PERSIST data and pass case number
+
+            case_number ="2erc3f"
+
+            request.response.set_cookie('case_number', case_number)
+
             return {
                 'successfully_submitted': True,
-                "case_number": "2erc3f"
+                "case_number": case_number
 
             }
 
