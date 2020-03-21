@@ -1,5 +1,7 @@
 from pyramid.view import view_config
 import logging
+import random
+import string
 from .. import models
 
 log = logging.getLogger(__name__)
@@ -29,7 +31,9 @@ def person_info(request):
         email_has_error = False if email != '' else True
 
         if firstname_has_error == False and lastname_has_error == False and phonenumber_has_error == False and email_has_error == False:
-            case_number ="2erc3f"
+            #case_number ="2erc3f"
+            symbols = string.ascii_lowercase + string.digits
+            case_number = ''.join(random.choice(symbols) for _ in range(6))
             person.firstname = firstname
             person.lastname = lastname
             person.phone_number = phonenumber
