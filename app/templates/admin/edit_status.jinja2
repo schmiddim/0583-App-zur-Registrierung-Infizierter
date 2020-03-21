@@ -1,0 +1,45 @@
+{% extends "layout.jinja2" %}
+{% block content %}
+
+<div class="content">
+
+    {% if has_error%}
+<div class="alert alert-danger" role="alert">
+   ID not set!
+</div>
+    {% endif %}
+
+    {%if uddated %}
+    <div class="alert alert-success" role="alert">
+  Update erfolgreich!
+</div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Vorname: {{first_name}} {{lastname}}</h4>
+            <h4>Nachname: {{last_name}} </h4>
+
+            <h4>Telefon: {{phone_number}}</h4>
+            <h4>Email: <a href="mailto:{{email}}">{{email}}</a></h4>
+            <form method="post">
+                <div class="form-group">
+
+                    <select class="form-control form-control-lg" name="status">
+                        <option value="infected" {% if covid_status==
+                        "infected" %}selected{%endif%} >Infiziert</option>
+                        <option value="healthy" {% if covid_status==
+                        "healthy" %}selected{%endif%} >Gesund</option>
+                        <option value="recovered" {% if covid_status==
+                        "recovered" %}selected{%endif%} >Geheilt</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Patienten updaten</button>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
