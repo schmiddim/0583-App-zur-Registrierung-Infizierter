@@ -1,10 +1,13 @@
 from pyramid.view import view_config
 import logging
+from .. import models
+
 log = logging.getLogger(__name__)
 
 
 @view_config(route_name='person_create', renderer='../templates/submit_person_info/main.jinja2')
 def person_info(request):
+    person = models.Person()
     firstname_has_error = False
     lastname_has_error = False
     phonenumber_has_error = False
@@ -26,9 +29,13 @@ def person_info(request):
         email_has_error = False if email != '' else True
 
         if firstname_has_error == False and lastname_has_error == False and phonenumber_has_error == False and email_has_error == False:
-            #@todo PERSIST data and pass case number
-
             case_number ="2erc3f"
+            person.firstname = firstname
+            person.lastname = lastname
+            person.phone_number = phonenumber
+            person.email = email
+            person.case_number = case_number
+            request.dbsession.add(person)
 
             request.response.set_cookie('case_number', case_number)
 
