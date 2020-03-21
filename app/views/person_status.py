@@ -3,6 +3,8 @@ from pyramid.view import view_config
 
 @view_config(route_name='person_status', renderer='../templates/mytemplate.jinja2')
 def person_view(request):
+    if request.method == 'POST':
+        db_err_msg= request
     return {'one': 'ONE', 'project': 'app'}
 
 

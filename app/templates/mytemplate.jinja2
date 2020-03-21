@@ -2,31 +2,55 @@
 
 {% block content %}
 <div class="content">
-<div class="row">
-<h1>Bitte geben Sie Ihre Kontaktdaten ein</h1>
-</div>
-  <div class="row">
-            <form target="@todo define me">
-                <div class="form-group">
-                    <label for="firstname">Vorname</label>
-                    <input type="text" class="form-control" id="firstname"  name="firstname" placeholder="Vorname">
+    <div class="row">
+        <h1>Bitte geben Sie Ihre Kontaktdaten ein</h1>
+    </div>
+    <div class="row"> {{ one }}
+        <form method="POST">
+            <div class="form-group">
+                <label for="firstname">Vorname</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Vorname" value="{{firstname}}">
+                {%if firstname_has_error %}
+                <div class="invalid-feedback">
+                    Bitte Vorname angeben
                 </div>
-                <div class="form-group">
-                    <label for="firstname">Nachname</label>
-                    <input type="text" class="form-control" id="lastname"  name="lastname" placeholder="Nachname">
-                </div>
-                <div class="form-group">
-                    <label for="phonenumber">Telefonnummer</label>
-                    <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="Telefonnummer">
-                </div>
+                {%endif%}
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstname">Nachname</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nachname" value="{{lastname}}">
+                {%if lastname_has_error %}
 
-                <button type="submit" class="btn btn-primary">Absenden</button>
-            </form>
-        </div>
+                <div class="invalid-feedback">
+                    Bitte Nachname angeben
+                </div>
+                {%endif%}
+            </div>
+            <div class="form-group">
+                <label for="phonenumber">Telefonnummer</label>
+                <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="Telefonnummer" value="{{phonenumber}}">
+                {%if phonenumber_has_error %}
+
+                <div class="invalid-feedback">
+                    Bitte valide Telefonnummer angeben
+                </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{email}}">
+
+                {%if email_has_error %}
+                <div class="invalid-feedback">
+                    Bitte valide Email Adresse angeben
+                </div>
+                {%endif%}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Absenden</button>
+        </form>
+    </div>
 </div>
 {% endblock content %}

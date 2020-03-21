@@ -1,9 +1,43 @@
 from pyramid.view import view_config
+import logging
+
+log = logging.getLogger(__name__)
 
 
 @view_config(route_name='person_info', renderer='../templates/mytemplate.jinja2')
 def person_info(request):
-    return {'one': 'ONE', 'project': 'app'}
+    firstname_has_error = False
+    lastname_has_error = False
+    phonenumber_has_error = False
+    email_has_error = False
+    firstname = ''
+    lastname = ''
+    phonenumber = ''
+    email = ''
+
+
+    if request.method == "POST":
+        firstname = request.POST['firstname'].strip()
+        lastname = request.POST['lastname'].strip()
+        phonenumber = request.POST['phonenumber'].strip()
+        email = request.POST['email'].strip()
+
+        firstname_has_error = False if firstname != '' else True
+        lastname_has_error = False if lastname != '' else True
+        phonenumber_has_error = False if phonenumber != '' else True
+        email_has_error = False if email != '' else True
+
+    return {
+        'firstname_has_error': firstname_has_error,
+        'lastname_has_error': lastname_has_error,
+        'phonenumber_has_error': phonenumber_has_error,
+        'email_has_error': email_has_error,
+        'firstname': firstname,
+        'lastname': lastname,
+        'phonenumber': phonenumber,
+        'email': email,
+
+    }
 
 
 db_err_msg = """\
