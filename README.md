@@ -4,6 +4,12 @@ Wir möchten Gesundheitsämter und Kranken bei der der Erfassung von Coronafäll
 ...
 
  
+ 
+ # Get Started
+ 
+copy app/config/db.py.dist to app/config/db.py and enter your DB credentials
+
+
 
 
 
