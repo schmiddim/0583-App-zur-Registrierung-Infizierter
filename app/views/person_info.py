@@ -4,7 +4,7 @@ import logging
 log = logging.getLogger(__name__)
 
 
-@view_config(route_name='person_info', renderer='../templates/mytemplate.jinja2')
+@view_config(route_name='person_info', renderer='../templates/submit_person_info/main.jinja2')
 def person_info(request):
     firstname_has_error = False
     lastname_has_error = False
@@ -14,7 +14,6 @@ def person_info(request):
     lastname = ''
     phonenumber = ''
     email = ''
-
 
     if request.method == "POST":
         firstname = request.POST['firstname'].strip()
@@ -27,7 +26,16 @@ def person_info(request):
         phonenumber_has_error = False if phonenumber != '' else True
         email_has_error = False if email != '' else True
 
+        if firstname_has_error == False and lastname_has_error == False and phonenumber_has_error == False and email_has_error == False:
+            #@todo PERSIST data and pass case number
+            return {
+                'successfully_submitted': True,
+                "case_number": "2erc3f"
+
+            }
+
     return {
+        'successfully_submitted': False,
         'firstname_has_error': firstname_has_error,
         'lastname_has_error': lastname_has_error,
         'phonenumber_has_error': phonenumber_has_error,
