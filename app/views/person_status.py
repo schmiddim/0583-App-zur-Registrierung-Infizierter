@@ -36,7 +36,6 @@ def person_view(request):
         'case_number_has_error': case_number_has_error,
         'email_has_error': email_has_error,
         'case_number': case_number,
-        'case_number_found': case_number_found,
         'email': email,
 
     }
