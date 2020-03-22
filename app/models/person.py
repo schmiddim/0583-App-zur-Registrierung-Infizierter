@@ -12,6 +12,9 @@ class Person(Base):
     phone_number = sqlalchemy.Column(sqlalchemy.Text)
     case_number = sqlalchemy.Column(sqlalchemy.Text)
     covid_status = sqlalchemy.Column(sqlalchemy.Text)
+    date_created = sqlalchemy.Column(sqlalchemy.DateTime)
+    date_updated = sqlalchemy.Column(sqlalchemy.DateTime)
+
 
 
 
