@@ -28,7 +28,10 @@ def admin_edit_case(request):
                 "uddated": True
                 }
 
-    # @todo fetch user by id - set has_error to True if nothing is found or raise exception
+    person = request.dbsession.query(models.Person).get(db_id)
+    if person is None:
+        has_error = True
+
     return {"id": 1,
             "first_name": "Michael",
             "last_name": "Schmitt",
