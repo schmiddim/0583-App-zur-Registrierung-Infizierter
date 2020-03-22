@@ -1,102 +1,160 @@
-#
-# Norwegian translations for PACKAGE package
-# This file is distributed under the same license as the PACKAGE package.
+# Translations template for app.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the app project.
 # Pawel Sikora <sikor6@gmail.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2020-03-21 19:11+0100\n"
-"PO-Revision-Date: 2020-03-21 19:15+0100\n"
+"Project-Id-Version: app 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-03-22 04:54+0100\n"
+"PO-Revision-Date: 2020-03-22 05:31+0100\n"
 "Last-Translator: Pawel Sikora <sikor6@gmail.com>\n"
 "Language-Team: Norwegian\n"
-"Language: no\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Lingua 4.14\n"
+"Generated-By: Babel 2.8.0\n"
+"Language: no\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/request_vars.py:76
-msgid "Request Vars"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/logger.py:59
-msgid "Log Messages"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/logger.py:60
-msgid "Logging"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/settings.py:16
-msgid "Settings"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/versions.py:31
-msgid "Versions"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:45
-msgid "Performance"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:175
-msgid "User CPU time"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:176
-msgid "System CPU time"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:177
-msgid "Total CPU time"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:178
-msgid "Elapsed time"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:179
-msgid "Context switches"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/traceback.py:19
-msgid "Traceback"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/renderings.py:16
-msgid "Renderers"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/routes.py:20
-msgid "Routes"
-msgstr ""
-
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/headers.py:14
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/headers.py:14
 msgid "HTTP Headers"
 msgstr ""
 
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/introspection.py:25
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/introspection.py:25
 msgid "Introspection"
 msgstr ""
 
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/sqla.py:60
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/logger.py:59
+msgid "Log Messages"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/logger.py:60
+msgid "Logging"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:45
+msgid "Performance"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:175
+msgid "User CPU time"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:176
+msgid "System CPU time"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:177
+msgid "Total CPU time"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:178
+msgid "Elapsed time"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:179
+msgid "Context switches"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/renderings.py:16
+msgid "Renderers"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/request_vars.py:76
+msgid "Request Vars"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/routes.py:20
+msgid "Routes"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/settings.py:16
+msgid "Settings"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/sqla.py:60
 msgid "SQLAlchemy Queries"
 msgstr ""
 
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/sqla.py:61
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/sqla.py:61
 msgid "SQLAlchemy"
 msgstr ""
 
-#: env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/tweens.py:16
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/traceback.py:19
+msgid "Traceback"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/tweens.py:16
 msgid "Tweens"
 msgstr ""
 
-#: env/lib/python3.6/site-packages/pyramid_jinja2/demo/__init__.py:16
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/versions.py:31
+msgid "Versions"
+msgstr ""
+
+#: app/env/lib/python3.6/site-packages/pyramid_jinja2/demo/__init__.py:16
 msgid "Hello World"
 msgstr ""
 
-#: env/lib/python3.6/site-packages/pyramid_jinja2/tests/test_ext.py:65
-#: env/lib/python3.6/site-packages/pyramid_jinja2/tests/test_ext.py:66
+#: app/env/lib/python3.6/site-packages/pyramid_jinja2/tests/test_ext.py:65
+#: app/env/lib/python3.6/site-packages/pyramid_jinja2/tests/test_ext.py:66
 msgid "foo"
-msgstr ""
+msgid_plural "foos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/templates/home.jinja2:7
+msgid " Willkommen beim Corona Informationsportal "
+msgstr " Velkommen til Corona-virus informasjonsportal "
+
+#: app/templates/home.jinja2:8
+msgid " Hier können Sie bequem mit Ihrem Gesundheitsamt komunizieren. "
+msgstr " Her kan du enkelt kommunisere med helseavdelingen vår. "
+
+#: app/templates/home.jinja2:14
+msgid " Profil anlegen "
+msgstr " Oprette profil "
+
+#: app/templates/home.jinja2:20
+msgid " Meinen Status überprüfen "
+msgstr " Sjekk statusen min "
+
+#: app/templates/layout.jinja2:11
+msgid " COVID-19 Test Registrierung "
+msgstr " COVID-19 Testregistrering "
+
+#: app/templates/status/form.jinja2:8
+msgid " Bitte geben Sie Ihre Fallnummer und Email ein "
+msgstr " Gi oss gjerne saks nummeren og emailen din "
+
+#: app/templates/status/form.jinja2:16
+#, python-format
+msgid " Ihre Fallnummer %(case_number)s wurde leider nicht gefunden "
+msgstr " Saks nummeren %(case_number)s har ikke blitt funnet "
+
+#: app/templates/status/form.jinja2:30
+msgid " Bitte Fallnummer angeben "
+msgstr " Vennligst oppgi saks nummeret "
+
+#: app/templates/status/form.jinja2:42
+msgid " Bitte Email Adresse angeben "
+msgstr " Vennligst oppgi emailen din "
+
+#: app/templates/status/form.jinja2:47
+msgid " Absenden "
+msgstr " Sende "
+
+#: app/templates/submit_person_info/success.jinja2:6
+msgid " Vielen Dank für die Übermittlung Ihrer Daten! "
+msgstr " Tusen takk for at du delte informasjon om helsen din med oss! "
+
+#: app/templates/submit_person_info/success.jinja2:10
+msgid " Bitte merken Sie sich die Fallnummer "
+msgstr " Husk din saks nummeret "
+
+#: app/templates/submit_person_info/success.jinja2:15
+msgid " Damit können Sie regelmäßige Aktualisierung erhalten "
+msgstr " Så du kan motta jevnlige oppdateringer "
