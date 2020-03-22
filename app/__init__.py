@@ -2,6 +2,8 @@ from pyramid.config import Configurator
 from pyramid.settings import aslist
 from sqlalchemy import engine_from_config
 from sqlalchemy.orm import sessionmaker
+from pyramid.events import NewRequest
+from pyramid.events import subscriber
 
 def my_locale_negotiator(request):
     languages = aslist(request.registry.settings['available_languages'])
@@ -10,13 +12,13 @@ def my_locale_negotiator(request):
 def prepare_env(event):
     request = event.request
     # set locale depending on browser settings
-    settings = request.registry.settings
-    locale = settings.get('pyramid.default_locale_name', 'en')
-    available = [loc['code'] for loc in AVAILABLE_LOCALES]
-    if request.accept_language:
-        accepted = request.accept_language
-        locale = accepted.best_match(available, locale)
-    request._LOCALE_ = locale
+ #  settings = request.registry.settings
+ #  locale = settings.get('pyramid.default_locale_name', 'en')
+ #  available = [loc['code'] for loc in AVAILABLE_LOCALES]
+ #  if request.accept_language:
+ #      accepted = request.accept_language
+ #      locale = accepted.best_match(available, locale)
+    request._LOCALE_ = 'en'
 
 def db(request):
     maker = request.registry.dbmaker
