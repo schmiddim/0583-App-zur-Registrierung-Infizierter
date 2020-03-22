@@ -32,12 +32,12 @@ def admin_edit_case(request):
     if person is None:
         has_error = True
 
-    return {"id": 1,
-            "first_name": "Michael",
-            "last_name": "Schmitt",
-            "phone_number": "0171 957 97 20",
-            "case_number": "acsmoi24bv",
-            "covid_status": "infected",
-            "email": "klaus@web.de",
+    return {"id": person.id,
+            "first_name": person.firstname,
+            "last_name": person.lastname,
+            "phone_number": person.phone_number,
+            "case_number": person.case_number,
+            "covid_status": person.covid_status,
+            "email": person.email,
             "has_error": has_error
             }
