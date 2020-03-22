@@ -16,11 +16,12 @@ def person_view(request):
         case_number_has_error = False if case_number != '' else True
 
         #@todo case number not found
-        person_query = request.dbsession.query(models.Person)
-        case_number_found = person_query.filter_by(case_number=case_number).scalar() is not None
+        person_query = request.dbsession.query(models.Person).filter_by(case_number=case_number)
+        case_number_found = person_query.scalar() is not None
 
         if case_number_has_error == False and email_has_error == False:
             # @todo fetch Data about Case Number form DB!
+            person = person_query.first()
 
             return {
                 'successfully_submitted': True,
