@@ -1,45 +1,20 @@
 from pyramid.view import view_config
 import logging
+from .. import models
 
 log = logging.getLogger(__name__)
-
 
 
 @view_config(route_name='admin_overview', renderer='../templates/admin/overview.jinja2')
 def admin_overview(request):
     return {}
 
+
 @view_config(route_name='admin_overview_json', renderer='json')
 def admin_overview_json(request):
-
-    #@todo fetch data from db!
-    return {
-        'data': [
-
-                    {"id": 1,
-                     "first_name": "Michael",
-                     "last_name": "Schmitt",
-                     "phone_number": "0171 957 97 20",
-                     "case_number": "acsmoi24bv",
-                     "covid_status": "healthy",
-                     "email": "klaus@web.de"
-                     },
-                    {"id": 2,
-                     "first_name": "Hansi",
-                     "last_name": "Hamster",
-                     "phone_number": "0171 957 97 20",
-                     "case_number": "acsmoi24bv",
-                     "covid_status": "healthy",
-                     "email": "klaus@web.de"
-                     },
-                    {"id": 3,
-                     "first_name": "Foo",
-                     "last_name": "Bar",
-                     "phone_number": "0171 957 97 20",
-                     "case_number": "acsmoi24bv",
-                     "covid_status": "healthy",
-                     "email": "klaus@web.de"
-                     }
-
-                ]
-    }
+    db_data = []
+    for person in request.dbsession.query(models.Person).all():
+        person_dict = person.__dict__.copy()
+        del person_dict['_sa_instance_state']
+        db_data.append(person_dict)
+    return db_data  # use json.dumps() instead?
