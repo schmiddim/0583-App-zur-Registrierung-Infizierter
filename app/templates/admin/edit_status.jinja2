@@ -32,6 +32,8 @@
                         "healthy" %}selected{%endif%} >Gesund</option>
                         <option value="recovered" {% if covid_status==
                         "recovered" %}selected{%endif%} >Geheilt</option>
+                                                <option value="recovered" {% if covid_status==
+                        "" %}selected{%endif%} >Unbekannt</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Patienten updaten</button>

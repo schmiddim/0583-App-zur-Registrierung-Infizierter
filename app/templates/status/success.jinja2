@@ -10,24 +10,20 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-
-            <h2>{% trans %} Sie sind gesund! {% endtrans %}</h2>
+            {%if person.covid_status == "" %}
+            <h2>{% trans %}Es liegen noch keine Informationen zu Ihrem Fall vor{% endtrans %}</h2>
+            {% endif %}
+            {%if person.covid_status == "recovered" %}
+            <h2>{% trans %} Sie sind genesen! {% endtrans %}</h2>
+            {% endif %}
+            {%if person.covid_status == "healthy" %}
+            <h2>{% trans %} Sie sind nicht Infiziert {% endtrans %}</h2>
+            {% endif %}
+            {%if person.covid_status == "infected" %}
+            <h2>{% trans %} Sie sind Infiziert {% endtrans %}</h2>
+            {% endif %}
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>{% trans %} Historie {% endtrans %}</h3>
-            <ul>
-                <li>
-                    2020-03-21 {% trans %} Sie sind gesund! {% endtrans %}
 
-                </li>
-                <li>
-                    2019-03-10 {% trans %} Sie sind Infiziert {% endtrans %}
-
-                </li>
-            </ul>
-        </div>
-    </div>
 </div>
 {% endblock content %}

@@ -29,7 +29,7 @@ def person_view(request):
                 'email_has_error': email_has_error,
                 'case_number': case_number,
                 'case_number_found': case_number_found,
-
+                'person': person,
                 'email': email,
 
             }
