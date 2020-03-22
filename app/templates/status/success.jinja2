@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-12">
             {%if person.covid_status == "" %}
-            <h2>{% trans %}Es liegen noch keine Informationen zu Ihrem Fall vor{% endtrans %}</h2>
+            <h2>{% trans %}Es liegen noch keine Informationen zu Ihrem Fall vor. Wir informieren Sie umgehend per Email wenn Ergebnisse vorliegen  {% endtrans %}</h2>
             {% endif %}
             {%if person.covid_status == "recovered" %}
             <h2>{% trans %} Sie sind genesen! {% endtrans %}</h2>

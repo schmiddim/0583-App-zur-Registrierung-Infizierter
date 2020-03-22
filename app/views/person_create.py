@@ -4,6 +4,7 @@ import random
 import string
 from .. import models
 import datetime
+
 log = logging.getLogger(__name__)
 
 
@@ -21,6 +22,10 @@ def json_person_create(request):
         request.response.status = 400
         return {"error": e}
 
+    person_db = request.dbsession.query(models.Person).filter(models.Person.email == email)
+    if person_db.first():
+        request.response.status = 400
+        return {"error": "email {} exists".format(email)}
 
     symbols = string.ascii_lowercase + string.digits
     case_number = ''.join(random.choice(symbols) for _ in range(6))
@@ -30,11 +35,13 @@ def json_person_create(request):
     person.phone_number = phonenumber
     person.email = email
     person.date_created = datetime.datetime.now()
-    person.date_updated =  datetime.datetime.now()
+    person.date_updated = datetime.datetime.now()
     person.case_number = case_number
     request.dbsession.add(person)
 
     return {"case_number": case_number}
+
+
 #    return json.loads(json.dumps(person, cls=AlchemyEncoder))
 
 
@@ -62,7 +69,25 @@ def person_info(request):
         email_has_error = False if email != '' else True
 
         if firstname_has_error == False and lastname_has_error == False and phonenumber_has_error == False and email_has_error == False:
-            # case_number ="2erc3f"
+
+            person_db = request.dbsession.query(models.Person).filter(models.Person.email == email)
+            if person_db.first():
+                request.response.status = 400
+                return {
+                    'successfully_submitted': False,
+                    'firstname_has_error': firstname_has_error,
+                    'lastname_has_error': lastname_has_error,
+                    'phonenumber_has_error': phonenumber_has_error,
+                    'email_has_error': email_has_error,
+                    'email_exists': True,
+                    'firstname': firstname,
+                    'lastname': lastname,
+                    'phonenumber': phonenumber,
+                    'email': email,
+                }
+
+
+
             symbols = string.ascii_lowercase + string.digits
             case_number = ''.join(random.choice(symbols) for _ in range(6))
             person.firstname = firstname

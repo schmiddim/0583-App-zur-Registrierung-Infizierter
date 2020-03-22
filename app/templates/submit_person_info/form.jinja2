@@ -4,9 +4,18 @@
 <div class="content">
     <div class="row">
         <div class="col-md-12">
-
             <h1>{% trans %} Bitte geben Sie Ihre Kontaktdaten ein {% endtrans %}</h1>
         </div>
+    </div>
+    {% if email_exists %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger" role="alert">
+                {% trans %} Email existiert bereits im System{% endtrans %}
+            </div>
+        </div>
+
+        {%endif %}
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -14,42 +23,46 @@
             <form method="POST">
                 <div class="form-group">
                     <label for="firstname">Vorname</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Vorname" value="{{firstname}}">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Vorname"
+                           value="{{firstname}}">
                     {%if firstname_has_error %}
                     <div class="invalid-feedback">
-                       {% trans %} Bitte Vorname angeben {% endtrans %}
+                        {% trans %} Bitte Vorname angeben {% endtrans %}
                     </div>
                     {%endif%}
 
                 </div>
                 <div class="form-group">
                     <label for="firstname">Nachname</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nachname" value="{{lastname}}">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nachname"
+                           value="{{lastname}}">
                     {%if lastname_has_error %}
 
                     <div class="invalid-feedback">
-                       {% trans %} Bitte Nachname angeben {% endtrans %}
+                        {% trans %} Bitte Nachname angeben {% endtrans %}
                     </div>
                     {%endif%}
                 </div>
                 <div class="form-group">
                     <label for="phonenumber">Telefonnummer</label>
-                    <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="Telefonnummer" value="{{phonenumber}}">
+                    <input type="tel" class="form-control" id="phonenumber" name="phonenumber"
+                           placeholder="Telefonnummer" value="{{phonenumber}}">
                     {%if phonenumber_has_error %}
 
                     <div class="invalid-feedback">
-                       {% trans %} Bitte valide Telefonnummer angeben {% endtrans %}
+                        {% trans %} Bitte valide Telefonnummer angeben {% endtrans %}
                     </div>
                     {%endif%}
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{email}}">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                           value="{{email}}">
 
                     {%if email_has_error %}
                     <div class="invalid-feedback">
-                       {% trans %} Bitte valide Email Adresse angeben {% endtrans %}
+                        {% trans %} Bitte valide Email Adresse angeben {% endtrans %}
                     </div>
                     {%endif%}
                 </div>

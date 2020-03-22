@@ -21,6 +21,7 @@ def person_view(request):
     email = ""
 
     if request.method == 'POST':
+        not_found = False
         email = request.POST['email'].strip()
         case_number = request.POST['case_number'].strip()
         email_has_error = False if email != '' else True
@@ -31,8 +32,11 @@ def person_view(request):
 
         if case_number_has_error == False and email_has_error == False:
             person = person_query.first()
+            if person is None:
+                not_found = True
 
             return {
+                'not_found': not_found,
                 'successfully_submitted': True,
                 'case_number_has_error': case_number_has_error,
                 'email_has_error': email_has_error,
