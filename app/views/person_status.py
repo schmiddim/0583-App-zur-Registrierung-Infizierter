@@ -11,12 +11,6 @@ def json_person_view(request):
     person = person_query.first()
     return json.loads(json.dumps(person, cls=AlchemyEncoder))
 
-@view_config(route_name="json_person_create", renderer='json')
-def json_person_create(request):
-    case_number = request.matchdict['case_number']
-    person_query = request.dbsession.query(models.Person).filter_by(case_number=case_number)
-    person = person_query.first()
-    return json.loads(json.dumps(person, cls=AlchemyEncoder))
 
 
 @view_config(route_name='person_status', renderer='../templates/status/main.jinja2')

@@ -3,8 +3,39 @@ import logging
 import random
 import string
 from .. import models
-
+import datetime
 log = logging.getLogger(__name__)
+
+
+@view_config(route_name="json_person_create", renderer='json')
+def json_person_create(request):
+    if request.method != 'POST':
+        request.response.status = 400
+        return {"error": "only post requests"}
+    try:
+        firstname = request.POST['firstname'].strip()
+        lastname = request.POST['lastname'].strip()
+        phonenumber = request.POST['phonenumber'].strip()
+        email = request.POST['email'].strip()
+    except Exception as  e:
+        request.response.status = 400
+        return {"error": e}
+
+
+    symbols = string.ascii_lowercase + string.digits
+    case_number = ''.join(random.choice(symbols) for _ in range(6))
+    person = models.Person()
+    person.firstname = firstname
+    person.lastname = lastname
+    person.phone_number = phonenumber
+    person.email = email
+    person.date_created = datetime.datetime.now()
+    person.date_updated =  datetime.datetime.now()
+    person.case_number = case_number
+    request.dbsession.add(person)
+
+    return {"case_number": case_number}
+#    return json.loads(json.dumps(person, cls=AlchemyEncoder))
 
 
 @view_config(route_name='person_create', renderer='../templates/submit_person_info/main.jinja2')
@@ -31,7 +62,7 @@ def person_info(request):
         email_has_error = False if email != '' else True
 
         if firstname_has_error == False and lastname_has_error == False and phonenumber_has_error == False and email_has_error == False:
-            #case_number ="2erc3f"
+            # case_number ="2erc3f"
             symbols = string.ascii_lowercase + string.digits
             case_number = ''.join(random.choice(symbols) for _ in range(6))
             person.firstname = firstname
@@ -39,6 +70,8 @@ def person_info(request):
             person.phone_number = phonenumber
             person.email = email
             person.case_number = case_number
+            person.date_created = datetime.datetime.now()
+            person.date_updated = datetime.datetime.now()
             request.dbsession.add(person)
 
             request.response.set_cookie('case_number', case_number)
