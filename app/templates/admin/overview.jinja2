@@ -25,11 +25,11 @@
         "ajax": '/admin_json',
         "columns": [
             {
-                "data": "first_name", fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
-                    $(nTd).html("<a href='/admin/edit?id=" + oData.id + "'>" + oData.first_name + "</a>");
+                "data": "firstname", fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html("<a href='/admin/edit?id=" + oData.id + "'>" + oData.firstname + "</a>");
                 }
             },
-            {"data": "last_name"},
+            {"data": "lastname"},
             {"data": "case_number"},
             {"data": "email"},
             {"data": "phone_number"},
