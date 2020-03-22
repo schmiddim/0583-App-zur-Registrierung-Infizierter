@@ -3,16 +3,16 @@
 {% block content %}
 <div class="content">
     <div class="row">
-        <h1>Vielen Dank für die Übermittlung Ihrer Daten!</h1>
+        <h1>{% trans %} Vielen Dank für die Übermittlung Ihrer Daten! {% endtrans %}</h1>
     </div>
     <div class="row">
 
-    Bitte merken Sie sich die Fallnummer
+    {% trans %} Bitte merken Sie sich die Fallnummer {% endtrans %}
 
     <h2>{{case_number}}</h2>
 
 
-Damit können Sie regelmäßige Updates LoremIphsummfdaipjvq3ng
+{% trans %} Damit können Sie regelmäßige Aktualisierung erhalten {% endtrans %}
     </div>
 </div>
 {% endblock content %}

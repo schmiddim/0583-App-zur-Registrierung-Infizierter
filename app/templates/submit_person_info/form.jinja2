@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <h1>Bitte geben Sie Ihre Kontaktdaten ein</h1>
+            <h1>{% trans %} Bitte geben Sie Ihre Kontaktdaten ein {% endtrans %}</h1>
         </div>
     </div>
     <div class="row">
@@ -17,7 +17,7 @@
                     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Vorname" value="{{firstname}}">
                     {%if firstname_has_error %}
                     <div class="invalid-feedback">
-                        Bitte Vorname angeben
+                       {% trans %} Bitte Vorname angeben {% trans %}
                     </div>
                     {%endif%}
 
@@ -28,7 +28,7 @@
                     {%if lastname_has_error %}
 
                     <div class="invalid-feedback">
-                        Bitte Nachname angeben
+                       {% trans %} Bitte Nachname angeben {% endtrans %}
                     </div>
                     {%endif%}
                 </div>
@@ -38,7 +38,7 @@
                     {%if phonenumber_has_error %}
 
                     <div class="invalid-feedback">
-                        Bitte valide Telefonnummer angeben
+                       {% trans %} Bitte valide Telefonnummer angeben {% endtrans %}
                     </div>
                     {%endif%}
                 </div>
@@ -49,12 +49,12 @@
 
                     {%if email_has_error %}
                     <div class="invalid-feedback">
-                        Bitte valide Email Adresse angeben
+                       {% trans %} Bitte valide Email Adresse angeben {% endtrans %}
                     </div>
                     {%endif%}
                 </div>
 
-                <button type="submit" class="btn btn-primary">Absenden</button>
+                <button type="submit" class="btn btn-primary">{% trans %} Absenden {% endtrans %}</button>
             </form>
         </div>
     </div>
