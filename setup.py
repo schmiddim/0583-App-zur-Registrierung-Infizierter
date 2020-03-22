@@ -9,6 +9,8 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
+    'Babel',
+    'lingua',
     'plaster_pastedeploy',
     'pyramid',
     'pyramid_jinja2',
@@ -58,6 +60,17 @@ setup(
         ],
         'console_scripts': [
             'initialize_app_db=app.scripts.initialize_db:main',
+        ],
+    },
+    message_extractors = { 'app': [
+        ('**.py', 'python', None ),
+        ('**.pt', 'xml', None ),
+        ('templates/**.py', 'python', None),
+        ('templates/**.jinja2', 'jinja2', None),
+        ('templates/submit_person_info/**.jinja2', 'jinja2', None),
+        ('templates/status/**.jinja2', 'jinja2', None),
+        ('templates/**.jinja2', 'jinja2', None),
+        ('static/**', 'ignore', None)
         ],
     },
 )

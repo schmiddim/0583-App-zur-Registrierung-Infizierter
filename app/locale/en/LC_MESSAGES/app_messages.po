@@ -1,0 +1,162 @@
+# Translations template for app.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the app project.
+# Pawel Sikora <sikor6@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-03-22 04:54+0100\n"
+"PO-Revision-Date: 2020-03-22 05:09+0100\n"
+"Last-Translator: Pawel Sikora <sikor6@gmail.com>\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/headers.py:14
+msgid "HTTP Headers"
+msgstr "HTTP Headers"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/introspection.py:25
+msgid "Introspection"
+msgstr "Introspection"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/logger.py:59
+msgid "Log Messages"
+msgstr "Log Messages"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/logger.py:60
+msgid "Logging"
+msgstr "Logging"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:45
+msgid "Performance"
+msgstr "Performance"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:175
+msgid "User CPU time"
+msgstr "User CPU time"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:176
+msgid "System CPU time"
+msgstr "System CPU time"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:177
+msgid "Total CPU time"
+msgstr "Total CPU time"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:178
+msgid "Elapsed time"
+msgstr "Elapsed time"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/performance.py:179
+msgid "Context switches"
+msgstr "Context switches"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/renderings.py:16
+msgid "Renderers"
+msgstr "Renderers"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/request_vars.py:76
+msgid "Request Vars"
+msgstr "Request Vars"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/routes.py:20
+msgid "Routes"
+msgstr "Routes"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/settings.py:16
+msgid "Settings"
+msgstr "Settings"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/sqla.py:60
+msgid "SQLAlchemy Queries"
+msgstr "SQLAlchemy Queries"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/sqla.py:61
+msgid "SQLAlchemy"
+msgstr "SQLAlchemy"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/traceback.py:19
+msgid "Traceback"
+msgstr "Traceback"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/tweens.py:16
+msgid "Tweens"
+msgstr "Tweens"
+
+#: app/env/lib/python3.6/site-packages/pyramid_debugtoolbar/panels/versions.py:31
+msgid "Versions"
+msgstr "Versions"
+
+#: app/env/lib/python3.6/site-packages/pyramid_jinja2/demo/__init__.py:16
+msgid "Hello World"
+msgstr "Hello World"
+
+#: app/env/lib/python3.6/site-packages/pyramid_jinja2/tests/test_ext.py:65
+#: app/env/lib/python3.6/site-packages/pyramid_jinja2/tests/test_ext.py:66
+msgid "foo"
+msgid_plural "foos"
+msgstr[0] "foo"
+msgstr[1] "foos"
+
+#: app/templates/home.jinja2:7
+msgid " Willkommen beim Corona Informationsportal "
+msgstr "Welcome on the Corona Information Portal"
+
+#: app/templates/home.jinja2:8
+msgid " Hier können Sie bequem mit Ihrem Gesundheitsamt komunizieren. "
+msgstr "Here you can communicate with our National Health Department"
+
+#: app/templates/home.jinja2:14
+msgid " Profil anlegen "
+msgstr "Create profile"
+
+#: app/templates/home.jinja2:20
+msgid " Meinen Status überprüfen "
+msgstr "Check my status"
+
+#: app/templates/layout.jinja2:11
+msgid " COVID-19 Test Registrierung "
+msgstr " COVID-19 Test Registration"
+
+#: app/templates/status/form.jinja2:8
+msgid " Bitte geben Sie Ihre Fallnummer und Email ein "
+msgstr ""
+" Bitte geben Sie Ihre Fallnummer und Email ein \n"
+"Please give us your Case Number and Email"
+
+#: app/templates/status/form.jinja2:16
+#, python-format
+msgid " Ihre Fallnummer %(case_number)s wurde leider nicht gefunden "
+msgstr "Your Case Number %(case_number)s was not found"
+
+#: app/templates/status/form.jinja2:30
+msgid " Bitte Fallnummer angeben "
+msgstr "Please give your Case Number"
+
+#: app/templates/status/form.jinja2:42
+msgid " Bitte Email Adresse angeben "
+msgstr "Please give your Email address"
+
+#: app/templates/status/form.jinja2:47
+msgid " Absenden "
+msgstr "Send"
+
+#: app/templates/submit_person_info/success.jinja2:6
+msgid " Vielen Dank für die Übermittlung Ihrer Daten! "
+msgstr "Thank you for sharing your health status!"
+
+#: app/templates/submit_person_info/success.jinja2:10
+msgid " Bitte merken Sie sich die Fallnummer "
+msgstr "Please remember your Case Number!"
+
+#: app/templates/submit_person_info/success.jinja2:15
+msgid " Damit können Sie regelmäßige Aktualisierung erhalten "
+msgstr "You can further receive regular updates with your Case Number"

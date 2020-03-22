@@ -18,7 +18,10 @@ set -u
 
 echo "Installing required packages..."
 pip install --upgrade pip setuptools
-pip install -e "git+https://github.com/schmiddim/0583-App-zur-Registrierung-Infizierter.git#egg=0583-App-zur-Registrierung-Infizierter" ".[testing]"
+pip install -e "git+https://github.com/schmiddim/0583-App-zur-Registrierung-Infizierter.git#egg=0583-App-zur-Registrierung-Infizierter"
+
+echo "Reload development.ini..."
+pserve development.ini --reload
 
 echo -en "\033[0;32m" # green font
 echo "Setup done!"
